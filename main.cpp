@@ -29,6 +29,7 @@ void loop() {
 	char buf[100];
 	int addr;
 	if (get_data_from_end_device(buf, &addr)){
+		send_data_to_device("OK", 3, addr);
 		mqtt_publish("mts_hardware_get_info_chanel", buf);
 	}
 	//mqtt_publish("mts_hardware_get_info_chanel", "fignya");
