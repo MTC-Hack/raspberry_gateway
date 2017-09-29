@@ -167,6 +167,7 @@ bool get_data_from_end_device(char * buf, int *addr){
 			PRINT_STR("%s",sprintf_buf);
 			printf("received data=%s\n",sx1272.packet_received.data); 
 			memcpy(buf, sx1272.packet_received.data, tmp_length);
+			buf[tmp_length] = '\0';
 			*addr = sx1272.packet_received.src;
 			return true;
 		}

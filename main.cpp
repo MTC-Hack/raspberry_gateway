@@ -26,7 +26,7 @@ void setup() {
 
 
 void loop() {
-	char buf[50];
+	char buf[100];
 	int addr;
 	if (get_data_from_end_device(buf, &addr)){
 		mqtt_publish("mts_hardware_get_info_chanel", buf);
